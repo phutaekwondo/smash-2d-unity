@@ -1,0 +1,15 @@
+game đập thú
+
+gameplay:
+- có nhiều ô để đập
+- đập kẻ thù được cộng điểm
+- đập đồng minh bị mất máu
+- số máu giới hạn, hết máu thì thua
+- một số kẻ thù đặc biệt phải đập nhiều lần (nhiều điểm)
+- một số combo kẻ thù phải đập theo thứ tự
+- 
+
+feature:
+- lưu điểm cao nhất
+- quảng cáo (ít thôi)
+- items (bình máu, tầm đánh rộng, đập lan, ...)
