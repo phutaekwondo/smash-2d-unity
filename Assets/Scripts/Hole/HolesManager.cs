@@ -3,6 +3,6 @@ using UnityEngine;
 
 public class HolesManager : MonoBehaviour
 {
-    private List<Hole> m_holes = new List<Hole>();
+    [SerializeField] private List<Hole> m_holes = new List<Hole>();
 }
 

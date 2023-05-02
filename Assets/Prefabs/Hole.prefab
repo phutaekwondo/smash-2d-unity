@@ -176,6 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 392024989124636552}
   - component: {fileID: 392024989124636553}
+  - component: {fileID: 1140841568660747643}
   m_Layer: 0
   m_Name: Hole
   m_TagString: Untagged
@@ -252,3 +253,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1140841568660747643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392024989124636550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 200392db5658e804f84cf1b1e5d7dbd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
