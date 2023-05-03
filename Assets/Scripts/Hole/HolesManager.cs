@@ -8,7 +8,20 @@ public class HolesManager : MonoBehaviour
 
     internal Hole GetRandomEmptyHole()
     {
-        throw new NotImplementedException();
+        //get list of empty holes
+        List<Hole> emptyHoles = new List<Hole>();
+        foreach (Hole hole in m_holes)
+        {
+            if (hole.IsEmpty())
+            {
+                emptyHoles.Add(hole);
+            }
+        }
+
+        //get a random empty hole
+        int randomIndex = UnityEngine.Random.Range(0, emptyHoles.Count);
+        Hole randomEmptyHole = emptyHoles[randomIndex];
+        return randomEmptyHole;
     }
 }
 

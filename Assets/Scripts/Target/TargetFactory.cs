@@ -7,6 +7,9 @@ public class TargetFactory : MonoBehaviour
 
     internal NormalEnemy GetNormalEnemy()
     {
-        throw new NotImplementedException();
+        //create a normal enemy
+        GameObject normalEnemyGameObject = Instantiate(m_normalEnemyPrefab);
+        NormalEnemy normalEnemy = normalEnemyGameObject.GetComponent<NormalEnemy>();
+        return normalEnemy;
     }
 }

@@ -9,24 +9,19 @@ public class GameMechanicExecutor : MonoBehaviour
 
     public void SpawnTarget()
     {
-
-        //get a random empty hole
-        Hole hole = m_holesManager.GetRandomEmptyHole();
-
-        //create a normal enemy
         NormalEnemy normalEnemy = m_targetFactory.GetNormalEnemy();
         m_remainTimeForNextTarget = normalEnemy.GetHoldOnTime();
 
-        //spawn the normal enemy in the hole
+        Hole hole = m_holesManager.GetRandomEmptyHole();
         hole.SpawnTarget(normalEnemy);
     }
 
     internal void UpdateInternal()
     {
+        m_remainTimeForNextTarget -= Time.deltaTime;
         if (m_remainTimeForNextTarget <= 0.0f)
         {
             SpawnTarget();
         }
-        m_remainTimeForNextTarget -= Time.deltaTime;
     }
 }
