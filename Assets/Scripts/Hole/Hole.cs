@@ -4,7 +4,7 @@ public class Hole : MonoBehaviour
 {
     private bool m_isEmpty = true;
 
-    public void SpawnTarget()
+    public void SpawnTarget(Target target)
     {
         throw new System.NotImplementedException();
     }

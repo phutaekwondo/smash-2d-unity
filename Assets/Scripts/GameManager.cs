@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
         }
         override public void Update() 
         {
-            m_gameMechanicExecutor.SpawnTarget();
+            m_gameMechanicExecutor.UpdateInternal();
         }
     }
     class GameState_Lost : GameStateBase 
