@@ -9,10 +9,18 @@ public class GameMechanicExecutor : MonoBehaviour
 
     public void SpawnTarget()
     {
+#nullable enable
+        Hole? hole = m_holesManager.GetRandomEmptyHole();
+        if (hole == null)
+        {
+            // Debug.Log("No empty hole");
+            return;
+        }
+#nullable disable 
+
         NormalEnemy normalEnemy = m_targetFactory.GetNormalEnemy();
         m_remainTimeForNextTarget = normalEnemy.GetHoldOnTime();
 
-        Hole hole = m_holesManager.GetRandomEmptyHole();
         hole.SpawnTarget(normalEnemy);
     }
 

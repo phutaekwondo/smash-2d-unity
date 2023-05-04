@@ -15,6 +15,7 @@ public class Hole : MonoBehaviour
         target.gameObject.transform.position = m_position;
         target.SetOrderInLayer(m_layerInOrderForTarget);
         target.SetHole(this);
+        target.JumpOut();
         m_isEmpty = false;
     }
     public bool IsEmpty()

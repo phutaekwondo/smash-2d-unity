@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public abstract class Target : MonoBehaviour
@@ -14,7 +15,8 @@ public abstract class Target : MonoBehaviour
     }
     public void JumpOut()
     {
-        throw new System.NotImplementedException();
+        //play jump out animation
+        StartCoroutine(JumpOutAnimation());
     }
     public void DrawIn()
     {
@@ -35,5 +37,29 @@ public abstract class Target : MonoBehaviour
     virtual public void SetOrderInLayer(int m_layerInOrderForTarget)
     {
         throw new NotImplementedException();
+    }
+
+    // PRIVATE METHODS
+    private IEnumerator JumpOutAnimation()
+    {
+        float deep = 1.5f;
+        float ratioSpeed = 1.5f;
+
+        Vector2 endPosition = transform.position;
+        Vector2 startPosition = endPosition - new Vector2(0.0f, deep);
+        Vector2 moveDirection = (endPosition - startPosition) * ratioSpeed;
+
+        this.transform.position = startPosition;
+
+        while (transform.position.y < endPosition.y)
+        {
+            transform.position = transform.position + ((Vector3)moveDirection * Time.deltaTime);
+
+            yield return null;
+        }
+
+        transform.position = endPosition;
+
+        yield return null;
     }
 }
