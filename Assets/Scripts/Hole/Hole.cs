@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Hole : MonoBehaviour
@@ -21,5 +22,10 @@ public class Hole : MonoBehaviour
     public bool IsEmpty()
     {
         return m_isEmpty;
+    }
+
+    public void SetEmpty(bool isEmpty)
+    {
+        m_isEmpty = isEmpty;
     }
 }

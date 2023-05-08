@@ -20,11 +20,12 @@ public abstract class Target : MonoBehaviour
     }
     public void DrawIn()
     {
-        throw new System.NotImplementedException();
+        StartCoroutine(DrawInAnimation());
     }
-    public void Destroy() 
+    public void Smashed() 
     {
-        throw new System.NotImplementedException();
+        m_containedHole.SetEmpty(true);
+        Destroy(this.gameObject);
     }
     public void BeHitted()
     {
@@ -60,6 +61,29 @@ public abstract class Target : MonoBehaviour
 
         transform.position = endPosition;
 
+        yield return null;
+    }
+    private IEnumerator DrawInAnimation()
+    {
+        float deep = 1.5f;
+        float ratioSpeed = 1.5f;
+
+        Vector2 startPosition = transform.position;
+        Vector2 endPosition = startPosition - new Vector2(0.0f, deep);
+        Vector2 moveDirection = (endPosition - startPosition) * ratioSpeed;
+
+        this.transform.position = startPosition;
+
+        while (transform.position.y < endPosition.y)
+        {
+            transform.position = transform.position + ((Vector3)moveDirection * Time.deltaTime);
+
+            yield return null;
+        }
+
+        transform.position = endPosition;
+
+        Smashed();
         yield return null;
     }
 }
