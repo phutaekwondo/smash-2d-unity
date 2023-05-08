@@ -3,6 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] protected GameMechanicExecutor m_gameMechanicExecutor;
+    [SerializeField] protected TargetManager m_targetManager;
     GameStateBase m_gameState;
 
     private void Start() 
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour
     private void Update() 
     {
         m_gameState.Update();
+        m_targetManager.InternalUpdate();
     }
 
     class GameStateBase 

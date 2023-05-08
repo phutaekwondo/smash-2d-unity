@@ -19,7 +19,7 @@ public class GameMechanicExecutor : MonoBehaviour
 #nullable disable 
 
         NormalEnemy normalEnemy = m_targetFactory.GetNormalEnemy();
-        m_remainTimeForNextTarget = normalEnemy.GetHoldOnTime();
+        m_remainTimeForNextTarget = normalEnemy.GetHoldOnTime() - 1;
 
         hole.SpawnTarget(normalEnemy);
     }

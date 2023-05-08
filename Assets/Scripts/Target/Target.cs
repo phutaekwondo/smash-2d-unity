@@ -9,6 +9,16 @@ public abstract class Target : MonoBehaviour
     protected float m_holdOnTime;
     protected Hole m_containedHole;
 
+    public void InternalUpdate()
+    {
+        m_remainTime -= Time.deltaTime;
+
+        if (m_remainTime<0)
+        {
+            DrawIn();
+        }
+    }
+
     public float GetHoldOnTime()
     {
         return m_holdOnTime;
@@ -22,9 +32,10 @@ public abstract class Target : MonoBehaviour
     {
         StartCoroutine(DrawInAnimation());
     }
-    public void Smashed() 
+    public void RemoveFromPlay() 
     {
         m_containedHole.SetEmpty(true);
+        TargetManager.Instance.RemoveTarget(this);
         Destroy(this.gameObject);
     }
     public void BeHitted()
@@ -74,7 +85,7 @@ public abstract class Target : MonoBehaviour
 
         this.transform.position = startPosition;
 
-        while (transform.position.y < endPosition.y)
+        while (transform.position.y > endPosition.y)
         {
             transform.position = transform.position + ((Vector3)moveDirection * Time.deltaTime);
 
@@ -83,7 +94,7 @@ public abstract class Target : MonoBehaviour
 
         transform.position = endPosition;
 
-        Smashed();
+        RemoveFromPlay();
         yield return null;
     }
 }
