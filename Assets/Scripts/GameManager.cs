@@ -4,6 +4,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] protected GameMechanicExecutor m_gameMechanicExecutor;
     [SerializeField] protected TargetManager m_targetManager;
+    [SerializeField] protected Player m_player;
     GameStateBase m_gameState;
 
     private void Start() 
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
     {
         m_gameState.Update();
         m_targetManager.InternalUpdate();
+        m_player.InternalUpdate();
     }
 
     class GameStateBase 

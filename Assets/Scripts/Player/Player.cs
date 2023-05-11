@@ -9,12 +9,7 @@ public class Player : MonoBehaviour
 
     private InputProvider m_inputProvider = null;
 
-    private void Start() 
-    {
-        m_inputProvider = new InputKeyboardMouse();
-    }
-
-    private void Update() 
+    public void InternalUpdate()
     {
         //temporarily use mouse position as input for testing
         Vector2? inputPosition = m_inputProvider.GetPressedPosition();
@@ -24,5 +19,11 @@ public class Player : MonoBehaviour
         {
             m_scoreText.text = inputPosition.Value.ToString();
         }
+        
+    }
+
+    private void Start() 
+    {
+        m_inputProvider = new InputKeyboardMouse();
     }
 }

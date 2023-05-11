@@ -412,6 +412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_gameMechanicExecutor: {fileID: 561289106}
   m_targetManager: {fileID: 1638388}
+  m_player: {fileID: 67285011}
 --- !u!4 &189406663
 Transform:
   m_ObjectHideFlags: 0
