@@ -33,7 +33,10 @@ public class Player : MonoBehaviour
 
     public void OnHit(GameObject hittedObject) 
     {
-        Debug.Log("hit some collider");
+        if (hittedObject.CompareTag("Target"))
+        {
+            hittedObject.GetComponent<Target>().OnHit();
+        }
     }
 
     private void Start() 

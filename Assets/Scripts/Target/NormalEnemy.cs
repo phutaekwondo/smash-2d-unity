@@ -12,4 +12,9 @@ public class NormalEnemy : Enemy
     {
         this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = m_layerInOrderForTarget;
     }
+    public override void OnHit()
+    {
+        base.OnHit();
+        this.DrawIn();
+    }
 }

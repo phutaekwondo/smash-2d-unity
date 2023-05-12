@@ -25,11 +25,13 @@ public abstract class Target : MonoBehaviour
     }
     public void JumpOut()
     {
+        StopAllCoroutines();
         //play jump out animation
         StartCoroutine(JumpOutAnimation());
     }
     public void DrawIn()
     {
+        StopAllCoroutines();
         StartCoroutine(DrawInAnimation());
     }
     public void RemoveFromPlay() 
@@ -38,9 +40,8 @@ public abstract class Target : MonoBehaviour
         TargetManager.Instance.RemoveTarget(this);
         Destroy(this.gameObject);
     }
-    public void BeHitted()
+    virtual public void OnHit()
     {
-        throw new System.NotImplementedException();
     }
     public void SetHole(Hole hole)
     {
