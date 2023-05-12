@@ -1,6 +1,6 @@
 using UnityEngine;
 
-abstract public class InputProvider : MonoBehaviour
+abstract public class InputProvider 
 {
     abstract public Vector2? GetPressedPosition();
 }

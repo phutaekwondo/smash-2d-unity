@@ -13,13 +13,29 @@ public class Player : MonoBehaviour
     {
         //temporarily use mouse position as input for testing
         Vector2? inputPosition = m_inputProvider.GetPressedPosition();
-
-        // show the input position on the screen for testing
         if (inputPosition.HasValue)
         {
+            DetectHitObject(inputPosition.Value);
             m_scoreText.text = inputPosition.Value.ToString();
         }
         
+    }
+
+    public void DetectHitObject(Vector2 hitPosition)
+    {
+        //if hit an object:
+        // OnHit(hittedObject)
+        Vector2 touchPosWorld2D = (Vector2)Camera.main.ScreenToWorldPoint(hitPosition);
+        RaycastHit2D hitInfo = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward);
+        if (hitInfo.collider != null)
+        {
+            OnHit(hitInfo.collider.gameObject);
+        }
+    }
+
+    public void OnHit(GameObject hittedObject) 
+    {
+        Debug.Log("hit some collider");
     }
 
     private void Start() 
