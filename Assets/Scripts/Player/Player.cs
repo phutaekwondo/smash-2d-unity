@@ -4,8 +4,7 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
-    private uint m_score = 0;
-    [SerializeField] private TMP_Text m_scoreText = null;
+    private int m_score = 0;
 
     private InputProvider m_inputProvider = null;
 
@@ -16,9 +15,17 @@ public class Player : MonoBehaviour
         if (inputPosition.HasValue)
         {
             DetectHitObject(inputPosition.Value);
-            m_scoreText.text = inputPosition.Value.ToString();
         }
-        
+    }
+
+    public int GetScore()
+    {
+        return m_score;
+    }
+
+    public void IncreaseScore(int score)
+    {
+        m_score += score;
     }
 
     public void DetectHitObject(Vector2 hitPosition)

@@ -2,9 +2,19 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+public delegate void OnTargetHitHandler(Target.Type type);
+
 public abstract class Target : MonoBehaviour
 {
-    protected int m_score = 0;
+    public enum Type
+    {
+        NormalEnemy,
+        Ally,
+    }
+
+    public Type m_type;
+    public event OnTargetHitHandler m_onTargetHitEvent;
+    public static int m_score { get; protected set; } = 0 ;
     protected float m_remainTime;
     protected float m_holdOnTime;
     protected Hole m_containedHole;
@@ -42,6 +52,7 @@ public abstract class Target : MonoBehaviour
     }
     virtual public void OnHit()
     {
+        m_onTargetHitEvent?.Invoke(m_type);
     }
     public void SetHole(Hole hole)
     {

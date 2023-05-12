@@ -6,6 +6,7 @@ public class GameMechanicExecutor : MonoBehaviour
     private float m_remainTimeForNextTarget = 0.0f;
     [SerializeField] private TargetFactory m_targetFactory;
     [SerializeField] private HolesManager m_holesManager;
+    [SerializeField] private Player m_player;
 
     public void SpawnTarget()
     {
@@ -19,6 +20,7 @@ public class GameMechanicExecutor : MonoBehaviour
 #nullable disable 
 
         NormalEnemy normalEnemy = m_targetFactory.GetNormalEnemy();
+        normalEnemy.m_onTargetHitEvent += OnTargetHit;
         m_remainTimeForNextTarget = normalEnemy.GetHoldOnTime() - 1;
 
         hole.SpawnTarget(normalEnemy);
@@ -30,6 +32,16 @@ public class GameMechanicExecutor : MonoBehaviour
         if (m_remainTimeForNextTarget <= 0.0f)
         {
             SpawnTarget();
+        }
+    }
+
+    public void OnTargetHit(Target.Type type)
+    {
+        //handle normal enemy hit  
+        if (type == Target.Type.NormalEnemy)
+        {
+            //increase player score
+            m_player.IncreaseScore(NormalEnemy.m_score);
         }
     }
 }

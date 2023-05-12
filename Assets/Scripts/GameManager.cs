@@ -1,10 +1,12 @@
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] protected GameMechanicExecutor m_gameMechanicExecutor;
     [SerializeField] protected TargetManager m_targetManager;
     [SerializeField] protected Player m_player;
+    [SerializeField] protected TMP_Text m_scoreText;
     GameStateBase m_gameState;
 
     private void Start() 
@@ -17,6 +19,9 @@ public class GameManager : MonoBehaviour
         m_gameState.Update();
         m_targetManager.InternalUpdate();
         m_player.InternalUpdate();
+
+        //update score text
+        m_scoreText.text = "Score: " + m_player.GetScore().ToString();
     }
 
     class GameStateBase 

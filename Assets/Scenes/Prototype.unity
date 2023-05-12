@@ -211,7 +211,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9efd65347f618549ae5eed9271c3b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_scoreText: {fileID: 1592423445}
 --- !u!1 &97749480
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,6 +412,7 @@ MonoBehaviour:
   m_gameMechanicExecutor: {fileID: 561289106}
   m_targetManager: {fileID: 1638388}
   m_player: {fileID: 67285011}
+  m_scoreText: {fileID: 1592423445}
 --- !u!4 &189406663
 Transform:
   m_ObjectHideFlags: 0
@@ -830,6 +830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_targetFactory: {fileID: 570607918}
   m_holesManager: {fileID: 1660629902}
+  m_player: {fileID: 67285011}
 --- !u!4 &561289107
 Transform:
   m_ObjectHideFlags: 0

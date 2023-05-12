@@ -11,4 +11,5 @@ public class GameConfig : MonoBehaviour
 
     //Configs
     public float m_normalEnemyHoldOnTime { get; private set; } = 3.0f;
+    public int m_noremalEnemyScore { get; private set; } = 3;
 }
