@@ -23,8 +23,6 @@ public class Player : MonoBehaviour
 
     public void DetectHitObject(Vector2 hitPosition)
     {
-        //if hit an object:
-        // OnHit(hittedObject)
         Vector2 touchPosWorld2D = (Vector2)Camera.main.ScreenToWorldPoint(hitPosition);
         RaycastHit2D hitInfo = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward);
         if (hitInfo.collider != null)
