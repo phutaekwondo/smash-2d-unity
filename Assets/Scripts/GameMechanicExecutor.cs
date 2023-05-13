@@ -4,6 +4,8 @@ using UnityEngine;
 public class GameMechanicExecutor : MonoBehaviour
 {
     private float m_remainTimeForNextTarget = 0.0f;
+    private float m_waitTimeForNextSpawn = 2.0f;
+
     [SerializeField] private TargetFactory m_targetFactory;
     [SerializeField] private HolesManager m_holesManager;
     [SerializeField] private Player m_player;
@@ -19,11 +21,29 @@ public class GameMechanicExecutor : MonoBehaviour
         }
 #nullable disable 
 
-        NormalEnemy normalEnemy = m_targetFactory.GetNormalEnemy();
-        normalEnemy.m_onTargetHitEvent += OnTargetHit;
-        m_remainTimeForNextTarget = normalEnemy.GetHoldOnTime() - 1;
+        Target.Type type = (Target.Type)UnityEngine.Random.Range(0, Enum.GetNames(typeof(Target.Type)).Length);
+        Target target = null;
+        switch (type)
+        {
+            case Target.Type.NormalEnemy:
+                target = m_targetFactory.GetNormalEnemy();
+                break;
+            case Target.Type.Ally:
+                target = m_targetFactory.GetAlly();
+                break;
+            default:
+                break;
+        }
+        target.SetHole(hole);
+        target.m_onTargetHitEvent += OnTargetHit;
+        m_remainTimeForNextTarget = m_waitTimeForNextSpawn;
+        hole.SpawnTarget(target);
 
-        hole.SpawnTarget(normalEnemy);
+        // NormalEnemy normalEnemy = m_targetFactory.GetNormalEnemy();
+        // normalEnemy.m_onTargetHitEvent += OnTargetHit;
+        // m_remainTimeForNextTarget = m_waitTimeForNextSpawn;
+
+        // hole.SpawnTarget(normalEnemy);
     }
 
     internal void UpdateInternal()
@@ -43,5 +63,10 @@ public class GameMechanicExecutor : MonoBehaviour
             //increase player score
             m_player.IncreaseScore(NormalEnemy.m_score);
         }
+    }
+
+    private void Start() 
+    {
+        m_waitTimeForNextSpawn = GameConfig.Instance.m_waitTimeForNextSpawn;
     }
 }

@@ -10,10 +10,6 @@ public class NormalEnemy : Enemy
         m_holdOnTime = GameConfig.Instance.m_normalEnemyHoldOnTime;
         m_score = GameConfig.Instance.m_noremalEnemyScore;
     }
-    public override void SetOrderInLayer(int m_layerInOrderForTarget)
-    {
-        this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = m_layerInOrderForTarget;
-    }
     public override void OnHit()
     {
         base.OnHit();

@@ -60,7 +60,7 @@ public abstract class Target : MonoBehaviour
     }
     virtual public void SetOrderInLayer(int m_layerInOrderForTarget)
     {
-        throw new NotImplementedException();
+        this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = m_layerInOrderForTarget;
     }
 
     // PRIVATE METHODS
