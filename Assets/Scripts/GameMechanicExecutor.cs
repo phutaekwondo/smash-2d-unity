@@ -38,12 +38,6 @@ public class GameMechanicExecutor : MonoBehaviour
         target.m_onTargetHitEvent += OnTargetHit;
         m_remainTimeForNextTarget = m_waitTimeForNextSpawn;
         hole.SpawnTarget(target);
-
-        // NormalEnemy normalEnemy = m_targetFactory.GetNormalEnemy();
-        // normalEnemy.m_onTargetHitEvent += OnTargetHit;
-        // m_remainTimeForNextTarget = m_waitTimeForNextSpawn;
-
-        // hole.SpawnTarget(normalEnemy);
     }
 
     internal void UpdateInternal()
