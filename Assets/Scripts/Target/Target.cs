@@ -12,6 +12,7 @@ public abstract class Target : MonoBehaviour
         Ally,
     }
 
+    protected int m_remainHitTimes = 1;
     protected Type m_type;
     public event OnTargetHitHandler m_onTargetHitEvent;
     public static int m_score { get; protected set; } = 0 ;
@@ -52,6 +53,9 @@ public abstract class Target : MonoBehaviour
     }
     virtual public void OnHit()
     {
+        if (m_remainHitTimes <= 0) return;
+
+        m_remainHitTimes--;
         m_onTargetHitEvent?.Invoke(m_type);
     }
     public void SetHole(Hole hole)

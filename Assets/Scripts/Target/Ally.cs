@@ -5,6 +5,7 @@ public class Ally : Target
     public Ally(): base()
     {
         m_type = Target.Type.Ally;
+        m_remainHitTimes = 1; 
         m_remainTime = GameConfig.Instance.m_allyHoldOnTime; 
         m_holdOnTime = GameConfig.Instance.m_allyHoldOnTime;
         m_score = GameConfig.Instance.m_allyScore;
@@ -12,7 +13,12 @@ public class Ally : Target
 
     public override void OnHit()
     {
+        if (m_remainHitTimes <= 0) return;
+
         base.OnHit();
-        this.DrawIn();
+        if (m_remainHitTimes == 0)
+        {
+            this.DrawIn();
+        }
     }
 }

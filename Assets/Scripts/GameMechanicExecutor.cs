@@ -51,11 +51,13 @@ public class GameMechanicExecutor : MonoBehaviour
 
     public void OnTargetHit(Target.Type type)
     {
-        Debug.Log(type);
         if (type == Target.Type.NormalEnemy)
         {
             m_player.IncreaseScore(NormalEnemy.m_score);
-            Debug.Log("NormalEnemy Hit");
+        }
+        else if (type == Target.Type.Ally)
+        {
+            m_player.IncreaseScore(-Ally.m_score);
         }
     }
 
