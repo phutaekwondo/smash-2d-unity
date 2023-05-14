@@ -22,11 +22,6 @@ public class TargetManager : MonoBehaviour
         m_targets.Remove(target);
     }
 
-    // private void Update() 
-    // {
-    //     Debug.Log(m_targets.Count);
-    // }
-
     public void InternalUpdate()
     {
         foreach (Target target in m_targets)
