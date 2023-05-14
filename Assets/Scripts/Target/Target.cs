@@ -12,7 +12,7 @@ public abstract class Target : MonoBehaviour
         Ally,
     }
 
-    public Type m_type;
+    protected Type m_type;
     public event OnTargetHitHandler m_onTargetHitEvent;
     public static int m_score { get; protected set; } = 0 ;
     protected float m_remainTime;
