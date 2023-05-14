@@ -12,13 +12,15 @@ public abstract class Target : MonoBehaviour
         Ally,
     }
 
-    protected int m_remainHitTimes = 1;
-    protected Type m_type;
-    public event OnTargetHitHandler m_onTargetHitEvent;
     public static int m_score { get; protected set; } = 0 ;
+    protected int m_remainHitTimes = 1;
     protected float m_remainTime;
     protected float m_holdOnTime;
+    private float m_linearRatioSpeed = 3f;
+
+    protected Type m_type;
     protected Hole m_containedHole;
+    public event OnTargetHitHandler m_onTargetHitEvent;
 
     public void InternalUpdate()
     {
@@ -72,7 +74,7 @@ public abstract class Target : MonoBehaviour
     private IEnumerator JumpOutAnimation()
     {
         float deep = 1.5f;
-        float ratioSpeed = 1.5f;
+        float ratioSpeed = m_linearRatioSpeed;
 
         Vector2 endPosition = transform.position;
         Vector2 startPosition = endPosition - new Vector2(0.0f, deep);
@@ -94,7 +96,7 @@ public abstract class Target : MonoBehaviour
     private IEnumerator DrawInAnimation()
     {
         float deep = 1.5f;
-        float ratioSpeed = 1.5f;
+        float ratioSpeed = m_linearRatioSpeed;
 
         Vector2 startPosition = transform.position;
         Vector2 endPosition = startPosition - new Vector2(0.0f, deep);
