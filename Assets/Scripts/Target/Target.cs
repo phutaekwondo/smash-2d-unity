@@ -22,9 +22,11 @@ public abstract class Target : MonoBehaviour
 
     public void InternalUpdate()
     {
+        if (m_remainTime <= 0) return;
+
         m_remainTime -= Time.deltaTime;
 
-        if (m_remainTime<0)
+        if (m_remainTime<=0)
         {
             DrawIn();
         }
@@ -37,7 +39,6 @@ public abstract class Target : MonoBehaviour
     public void JumpOut()
     {
         StopAllCoroutines();
-        //play jump out animation
         StartCoroutine(JumpOutAnimation());
     }
     public void DrawIn()
