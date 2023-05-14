@@ -4,7 +4,7 @@ using UnityEngine;
 public class Hole : MonoBehaviour
 {
     private bool m_isEmpty = true;
-    private Vector2 m_position;
+    private Vector3 m_position;
     [SerializeField] private int m_layerInOrderForTarget = 1;
 
     private void Start() 

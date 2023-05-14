@@ -76,9 +76,9 @@ public abstract class Target : MonoBehaviour
         float deep = 1.5f;
         float ratioSpeed = m_linearRatioSpeed;
 
-        Vector2 endPosition = transform.position;
-        Vector2 startPosition = endPosition - new Vector2(0.0f, deep);
-        Vector2 moveDirection = (endPosition - startPosition) * ratioSpeed;
+        Vector3 endPosition = transform.position;
+        Vector3 startPosition = endPosition - new Vector3(0.0f, deep);
+        Vector3 moveDirection = (endPosition - startPosition) * ratioSpeed;
 
         this.transform.position = startPosition;
 
@@ -98,9 +98,9 @@ public abstract class Target : MonoBehaviour
         float deep = 1.5f;
         float ratioSpeed = m_linearRatioSpeed;
 
-        Vector2 startPosition = transform.position;
-        Vector2 endPosition = startPosition - new Vector2(0.0f, deep);
-        Vector2 moveDirection = (endPosition - startPosition) * ratioSpeed;
+        Vector3 startPosition = transform.position;
+        Vector3 endPosition = startPosition - new Vector3(0.0f, deep);
+        Vector3 moveDirection = (endPosition - startPosition) * ratioSpeed;
 
         this.transform.position = startPosition;
 
