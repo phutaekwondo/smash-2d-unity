@@ -10,7 +10,7 @@ public class SpiritBar : MonoBehaviour
 
     [SerializeField] private Image m_spiritBarMask;
 
-    public void IncreaseSpririt(float amount)
+    public void IncreaseSpirit(float amount)
     {
         m_spirit += amount;
         if (m_spirit > MAX_SPIRIT)
