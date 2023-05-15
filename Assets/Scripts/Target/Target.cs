@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public delegate void OnTargetHitHandler(Target.Type type);
+public delegate void OnTargetHitHandler(Target target);
 
 public abstract class Target : MonoBehaviour
 {
@@ -19,7 +19,7 @@ public abstract class Target : MonoBehaviour
     protected float m_holdOnTime;
     private float m_linearRatioSpeed = 3f;
 
-    protected Type m_type;
+    public Type m_type { get; protected set; }
     protected Hole m_containedHole;
     public event OnTargetHitHandler m_onTargetHitEvent;
 
@@ -60,7 +60,7 @@ public abstract class Target : MonoBehaviour
         if (m_remainHitTimes <= 0) return;
 
         m_remainHitTimes--;
-        m_onTargetHitEvent?.Invoke(m_type);
+        m_onTargetHitEvent?.Invoke(this);
     }
     public void SetHole(Hole hole)
     {

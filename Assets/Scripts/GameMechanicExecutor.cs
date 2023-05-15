@@ -52,14 +52,14 @@ public class GameMechanicExecutor : MonoBehaviour
         m_spiritBar.InternalUpdate();
     }
 
-    public void OnTargetHit(Target.Type type)
+    public void OnTargetHit(Target target)
     {
-        if (type == Target.Type.NormalEnemy)
+        if (target.m_type == Target.Type.NormalEnemy)
         {
             m_player.IncreaseScore(NormalEnemy.m_score);
             m_spiritBar.IncreaseSpririt(NormalEnemy.m_spiritAmount);
         }
-        else if (type == Target.Type.Ally)
+        else if (target.m_type == Target.Type.Ally)
         {
             m_player.IncreaseScore(-Ally.m_score);
         }
