@@ -16,6 +16,7 @@ public class GameConfig : MonoBehaviour
     public int m_allyScore { get; private set; } = 10;
     public float m_normalEnemyHoldOnTime { get; private set; } = 2.0f;
     public int m_noremalEnemyScore { get; private set; } = 3;
+    public float m_normalEnemySpiritAmount { get; private set; } = 10;
 
     //====GAME MECHANIC====
     public float m_waitTimeForNextSpawn { get; private set; } = 0.5f;

@@ -57,6 +57,7 @@ public class GameMechanicExecutor : MonoBehaviour
         if (type == Target.Type.NormalEnemy)
         {
             m_player.IncreaseScore(NormalEnemy.m_score);
+            m_spiritBar.IncreaseSpririt(NormalEnemy.m_spiritAmount);
         }
         else if (type == Target.Type.Ally)
         {

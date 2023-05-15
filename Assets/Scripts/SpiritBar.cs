@@ -10,6 +10,19 @@ public class SpiritBar : MonoBehaviour
 
     [SerializeField] private Image m_spiritBarMask;
 
+    public void IncreaseSpririt(float amount)
+    {
+        m_spirit += amount;
+        if (m_spirit > MAX_SPIRIT)
+        {
+            m_spirit = MAX_SPIRIT;
+        }
+        else if (m_spirit < MIN_SPIRIT)
+        {
+            m_spirit = MIN_SPIRIT;
+        }
+    }
+
     public void InternalUpdate()
     {
 
