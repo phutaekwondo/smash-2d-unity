@@ -9,7 +9,7 @@ public class NormalEnemy : Enemy
         m_remainHitTimes = 1; 
         m_remainTime = GameConfig.Instance.m_normalEnemyHoldOnTime; 
         m_holdOnTime = GameConfig.Instance.m_normalEnemyHoldOnTime;
-        m_score = GameConfig.Instance.m_noremalEnemyScore;
+        m_score = GameConfig.Instance.m_normalEnemyScore;
         m_spiritAmount = GameConfig.Instance.m_normalEnemySpiritAmount;
     }
     public override void OnHit()
