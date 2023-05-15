@@ -9,6 +9,7 @@ public class GameMechanicExecutor : MonoBehaviour
     [SerializeField] private TargetFactory m_targetFactory;
     [SerializeField] private HolesManager m_holesManager;
     [SerializeField] private Player m_player;
+    [SerializeField] private SpiritBar m_spiritBar;
 
     public void SpawnTarget()
     {
@@ -47,6 +48,8 @@ public class GameMechanicExecutor : MonoBehaviour
         {
             SpawnTarget();
         }
+
+        m_spiritBar.InternalUpdate();
     }
 
     public void OnTargetHit(Target.Type type)
