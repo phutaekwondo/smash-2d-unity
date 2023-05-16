@@ -3,6 +3,11 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance { get; private set; }
+    private void Awake() {
+        Instance = this;
+    }
+
     [SerializeField] protected GameMechanicExecutor m_gameMechanicExecutor;
     [SerializeField] protected TargetManager m_targetManager;
     [SerializeField] protected Player m_player;
