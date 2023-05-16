@@ -52,6 +52,12 @@ public class GameMechanicExecutor : MonoBehaviour
         m_spiritBar.InternalUpdate();
     }
 
+    public bool IsGameOver()
+    {
+        // Debug.Log(m_spiritBar.GetCurrentSpirit());
+        return m_spiritBar.GetCurrentSpirit() <= 0.0f;
+    }
+
     public void OnTargetHit(Target target)
     {
         if (target.m_type == Target.Type.NormalEnemy)
@@ -70,4 +76,5 @@ public class GameMechanicExecutor : MonoBehaviour
     {
         m_waitTimeForNextSpawn = GameConfig.Instance.m_waitTimeForNextSpawn;
     }
+
 }

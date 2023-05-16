@@ -1,12 +1,16 @@
 using UnityEngine;
 using TMPro;
+using System;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     private void Awake() {
         Instance = this;
+        DontDestroyOnLoad(this);
     }
+
+    public static int m_currentScore { get; private set; } = 0;
 
     [SerializeField] protected GameMechanicExecutor m_gameMechanicExecutor;
     [SerializeField] protected TargetManager m_targetManager;
@@ -26,6 +30,7 @@ public class GameManager : MonoBehaviour
         m_player.InternalUpdate();
 
         //update score text
+        m_currentScore = m_player.GetScore();
         m_scoreText.text = "Score: " + m_player.GetScore().ToString();
     }
 
@@ -59,6 +64,11 @@ public class GameManager : MonoBehaviour
         override public void Update() 
         {
             m_gameMechanicExecutor.UpdateInternal();
+            if (m_gameMechanicExecutor.IsGameOver())
+            {
+                Debug.Log("Game Over");
+                UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+            }
         }
     }
     class GameState_Lost : GameStateBase 

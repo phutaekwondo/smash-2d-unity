@@ -8,4 +8,8 @@ public class MenuEventHandler : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Prototype");
     }
+    public void OnPlayAgainButtonClick()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Prototype");
+    }
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,6 +22,11 @@ public class SpiritBar : MonoBehaviour
         {
             m_spirit = MIN_SPIRIT;
         }
+    }
+
+    public float GetCurrentSpirit()
+    {
+        return m_spirit;
     }
 
     public void InternalUpdate()
