@@ -17,7 +17,6 @@ public class GameMechanicExecutor : MonoBehaviour
         Hole? hole = m_holesManager.GetRandomEmptyHole();
         if (hole == null)
         {
-            // Debug.Log("No empty hole");
             return;
         }
 #nullable disable 
@@ -54,7 +53,6 @@ public class GameMechanicExecutor : MonoBehaviour
 
     public bool IsGameOver()
     {
-        // Debug.Log(m_spiritBar.GetCurrentSpirit());
         return m_spiritBar.GetCurrentSpirit() <= 0.0f;
     }
 

@@ -66,7 +66,6 @@ public class GameManager : MonoBehaviour
             m_gameMechanicExecutor.UpdateInternal();
             if (m_gameMechanicExecutor.IsGameOver())
             {
-                Debug.Log("Game Over");
                 UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
             }
         }
