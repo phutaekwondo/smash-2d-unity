@@ -7,16 +7,21 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     private void Awake() {
         Instance = this;
-        DontDestroyOnLoad(this);
     }
 
     public static int m_currentScore { get; private set; } = 0;
+    public static int m_highScore { get; private set; } = 0;
 
     [SerializeField] protected GameMechanicExecutor m_gameMechanicExecutor;
     [SerializeField] protected TargetManager m_targetManager;
     [SerializeField] protected Player m_player;
     [SerializeField] protected TMP_Text m_scoreText;
     GameStateBase m_gameState;
+
+    public void OnGameOver()
+    {
+        m_highScore = Math.Max(m_highScore, m_currentScore);
+    }
 
     private void Start() 
     {
@@ -66,6 +71,7 @@ public class GameManager : MonoBehaviour
             m_gameMechanicExecutor.UpdateInternal();
             if (m_gameMechanicExecutor.IsGameOver())
             {
+                GameManager.Instance.OnGameOver(); 
                 UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
             }
         }
