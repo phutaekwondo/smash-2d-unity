@@ -9,6 +9,7 @@ public class Ally : Target
         m_remainTime = GameConfig.Instance.m_allyHoldOnTime; 
         m_holdOnTime = GameConfig.Instance.m_allyHoldOnTime;
         m_score = GameConfig.Instance.m_allyScore;
+        m_spiritAmount = GameConfig.Instance.m_allySpiritAmount;
     }
 
     public override void OnHit()
