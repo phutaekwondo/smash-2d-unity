@@ -60,12 +60,12 @@ public class GameMechanicExecutor : MonoBehaviour
     {
         if (target.m_type == Target.Type.NormalEnemy)
         {
-            m_player.IncreaseScore(NormalEnemy.m_score);
+            m_player.IncreaseScore(target.m_score);
             m_spiritBar.IncreaseSpirit(NormalEnemy.m_spiritAmount);
         }
         else if (target.m_type == Target.Type.Ally)
         {
-            m_player.IncreaseScore(-Ally.m_score);
+            m_player.IncreaseScore(-target.m_score);
             m_spiritBar.IncreaseSpirit(-Ally.m_spiritAmount);
         }
     }

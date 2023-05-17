@@ -12,8 +12,8 @@ public abstract class Target : MonoBehaviour
         Ally,
     }
 
-    public static int m_score { get; protected set; } = 0 ;
     public static float m_spiritAmount;
+    public int m_score { get; protected set; } = 0 ;
     protected int m_remainHitTimes = 1;
     protected float m_remainTime;
     protected float m_holdOnTime;
