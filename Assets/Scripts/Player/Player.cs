@@ -5,6 +5,7 @@ using TMPro;
 public class Player : MonoBehaviour
 {
     private int m_score = 0;
+    private const int MIN_SCORE = 0;
 
     private InputProvider m_inputProvider = null;
 
@@ -26,6 +27,10 @@ public class Player : MonoBehaviour
     public void IncreaseScore(int score)
     {
         m_score += score;
+        if (m_score < MIN_SCORE)
+        {
+            m_score = MIN_SCORE;
+        }
     }
 
     public void DetectHitObject(Vector2 hitPosition)
