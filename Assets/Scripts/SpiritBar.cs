@@ -43,4 +43,8 @@ public class SpiritBar : MonoBehaviour
 
         m_spiritBarMask.fillAmount = m_spirit / MAX_SPIRIT;
     }
+
+    private void Start() {
+        m_spiritDropSpeed = GameConfig.Instance.m_spiritDropSpeed;
+    }
 }

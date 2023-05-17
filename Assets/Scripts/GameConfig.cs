@@ -10,7 +10,7 @@ public class GameConfig : MonoBehaviour
         Instance = this;
     }
 
-    //Configs
+    //Configs 
     //====TARGETS====
     public float m_allyHoldOnTime { get; private set; } = 2.0f;
     public int m_allyScore { get; private set; } = 10;
@@ -20,5 +20,6 @@ public class GameConfig : MonoBehaviour
     public float m_normalEnemySpiritAmount { get; private set; } = 10f;
 
     //====GAME MECHANIC====
+    public float m_spiritDropSpeed { get; private set; } = 20f; //per second
     public float m_waitTimeForNextSpawn { get; private set; } = 0.5f;
 }
