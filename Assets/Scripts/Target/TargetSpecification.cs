@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class TargetSpecification 
 {
     public Target.Type m_type { get; private set; }
