@@ -4,12 +4,9 @@ public class Ally : Target
 {
     public Ally(): base()
     {
-        m_type = Target.Type.Ally;
-        m_remainHitTimes = 1; 
-        m_remainTime = GameConfig.Instance.m_allyHoldOnTime; 
-        m_holdOnTime = GameConfig.Instance.m_allyHoldOnTime;
-        m_score = GameConfig.Instance.m_allyScore;
-        m_spiritAmount = GameConfig.Instance.m_allySpiritAmount;
+        m_specification = TargetFactory.m_allySpecification;
+        m_remainHitTimes = m_specification.m_hitDuration; 
+        m_remainTime = m_specification.m_holdOnTime;
     }
 
     public override void OnHit()

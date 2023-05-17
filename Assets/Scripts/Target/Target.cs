@@ -12,14 +12,10 @@ public abstract class Target : MonoBehaviour
         Ally,
     }
 
-    public static float m_spiritAmount;
-    public int m_score { get; protected set; } = 0 ;
+    protected TargetSpecification m_specification;
+
     protected int m_remainHitTimes = 1;
     protected float m_remainTime;
-    protected float m_holdOnTime;
-    private float m_linearRatioSpeed = 3f;
-
-    public Type m_type { get; protected set; }
     protected Hole m_containedHole;
     public event OnTargetHitHandler m_onTargetHitEvent;
 
@@ -34,10 +30,18 @@ public abstract class Target : MonoBehaviour
             DrawIn();
         }
     }
+    public void SetSpecification(TargetSpecification specification)
+    {
+        this.m_specification = specification;
+    }
+    public TargetSpecification GetSpecification()
+    {
+        return this.m_specification;
+    }
 
     public float GetHoldOnTime()
     {
-        return m_holdOnTime;
+        return GetSpecification().m_holdOnTime;
     }
     public void JumpOut()
     {
@@ -75,7 +79,7 @@ public abstract class Target : MonoBehaviour
     private IEnumerator JumpOutAnimation()
     {
         float deep = 1.5f;
-        float ratioSpeed = m_linearRatioSpeed;
+        float ratioSpeed = GetSpecification().m_linearRatioSpeed;
 
         Vector3 endPosition = transform.position;
         Vector3 startPosition = endPosition - new Vector3(0.0f, deep);
@@ -97,7 +101,7 @@ public abstract class Target : MonoBehaviour
     private IEnumerator DrawInAnimation()
     {
         float deep = 1.5f;
-        float ratioSpeed = m_linearRatioSpeed;
+        float ratioSpeed = GetSpecification().m_linearRatioSpeed;
 
         Vector3 startPosition = transform.position;
         Vector3 endPosition = startPosition - new Vector3(0.0f, deep);

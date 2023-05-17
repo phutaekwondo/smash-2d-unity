@@ -58,15 +58,15 @@ public class GameMechanicExecutor : MonoBehaviour
 
     public void OnTargetHit(Target target)
     {
-        if (target.m_type == Target.Type.NormalEnemy)
+        if (target.GetSpecification().m_type == Target.Type.NormalEnemy)
         {
-            m_player.IncreaseScore(target.m_score);
-            m_spiritBar.IncreaseSpirit(NormalEnemy.m_spiritAmount);
+            m_player.IncreaseScore(target.GetSpecification().m_score);
+            m_spiritBar.IncreaseSpirit(target.GetSpecification().m_spiritAmount);
         }
-        else if (target.m_type == Target.Type.Ally)
+        else if (target.GetSpecification().m_type == Target.Type.Ally)
         {
-            m_player.IncreaseScore(-target.m_score);
-            m_spiritBar.IncreaseSpirit(-Ally.m_spiritAmount);
+            m_player.IncreaseScore(-target.GetSpecification().m_score);
+            m_spiritBar.IncreaseSpirit(-target.GetSpecification().m_spiritAmount);
         }
     }
 
