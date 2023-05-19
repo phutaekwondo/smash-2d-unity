@@ -69,10 +69,6 @@ public abstract class Target : MonoBehaviour
     {
         m_containedHole = hole;
     }
-    virtual public void SetOrderInLayer(int m_layerInOrderForTarget)
-    {
-        this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = m_layerInOrderForTarget;
-    }
 
     // PRIVATE METHODS
     private IEnumerator JumpOutAnimation()

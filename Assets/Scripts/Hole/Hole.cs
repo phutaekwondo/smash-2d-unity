@@ -4,7 +4,6 @@ public class Hole : MonoBehaviour
 {
     private bool m_isEmpty = true;
     private Vector3 m_position;
-    [SerializeField] private int m_layerInOrderForTarget = 1;
 
     private void Start() 
     {
@@ -13,7 +12,7 @@ public class Hole : MonoBehaviour
     public void SpawnTarget(Target target)
     {
         target.gameObject.transform.position = m_position;
-        target.SetOrderInLayer(m_layerInOrderForTarget);
+        target.gameObject.transform.SetParent(gameObject.transform);
         target.SetHole(this);
         target.JumpOut();
         m_isEmpty = false;

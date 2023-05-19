@@ -308,7 +308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1624667916, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_IsCustomRangeActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 392024989124636550, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_Name
@@ -356,6 +356,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 392024989124636552, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 392024989124636553, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
+      propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1140841568660747643, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
@@ -445,7 +449,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1624667916, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_IsCustomRangeActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 392024989124636550, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_Name
@@ -497,7 +501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 392024989124636553, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1140841568660747643, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_layerInOrderForTarget
@@ -716,7 +720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1624667916, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_IsCustomRangeActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 392024989124636550, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_Name
@@ -768,7 +772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 392024989124636553, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1140841568660747643, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_layerInOrderForTarget
@@ -978,22 +982,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1039327249}
     m_Modifications:
-    - target: {fileID: 1624667916, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
-      propertyPath: m_MaskAlphaCutoff
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1624667916, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
-      propertyPath: m_BackSortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1624667916, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
-      propertyPath: m_FrontSortingOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1624667916, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
-      propertyPath: m_IsCustomRangeActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 392024989124636550, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_Name
       value: Hole (1)
@@ -1044,11 +1032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 392024989124636553, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1140841568660747643, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
-      propertyPath: m_layerInOrderForTarget
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
@@ -1143,7 +1127,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1624667916, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_IsCustomRangeActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 392024989124636550, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_Name
@@ -1195,7 +1179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 392024989124636553, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1140841568660747643, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_layerInOrderForTarget
@@ -1774,7 +1758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1624667916, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_IsCustomRangeActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 392024989124636550, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_Name
@@ -1826,7 +1810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 392024989124636553, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1140841568660747643, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_layerInOrderForTarget
@@ -1857,18 +1841,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1039327249}
     m_Modifications:
-    - target: {fileID: 1624667916, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
-      propertyPath: m_BackSortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1624667916, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
-      propertyPath: m_FrontSortingOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1624667916, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
-      propertyPath: m_IsCustomRangeActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 392024989124636550, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_Name
       value: Hole
@@ -1919,11 +1891,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 392024989124636553, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1140841568660747643, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
-      propertyPath: m_layerInOrderForTarget
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
@@ -1956,7 +1924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1624667916, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_IsCustomRangeActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 392024989124636550, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_Name
@@ -2004,6 +1972,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 392024989124636552, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 392024989124636553, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
+      propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1140841568660747643, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
@@ -2166,7 +2138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1624667916, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_IsCustomRangeActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 392024989124636550, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_Name
@@ -2214,6 +2186,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 392024989124636552, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 392024989124636553, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
+      propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1140841568660747643, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
