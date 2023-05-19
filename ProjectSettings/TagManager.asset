@@ -42,3 +42,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: hole1
+    uniqueID: 2471776817
+    locked: 0
