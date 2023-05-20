@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public delegate void OnTargetHitHandler(Target target);
+public delegate void OnTargetSmashHandler(Target target);
 
 public abstract class Target : MonoBehaviour
 {
@@ -17,7 +17,7 @@ public abstract class Target : MonoBehaviour
     protected int m_remainHitTimes = 1;
     protected float m_remainTime;
     protected Hole m_containedHole;
-    public event OnTargetHitHandler m_onTargetSmashEvent;
+    public event OnTargetSmashHandler m_onTargetSmashEvent;
 
     virtual public void InternalUpdate()
     {

@@ -22,7 +22,6 @@ public class GameMechanicExecutor : MonoBehaviour
 #nullable disable 
 
         Target.Type type = (Target.Type)UnityEngine.Random.Range(0, Enum.GetNames(typeof(Target.Type)).Length);
-        type = Target.Type.StrongEnemy;
         Target target = null;
         switch (type)
         {
@@ -63,6 +62,7 @@ public class GameMechanicExecutor : MonoBehaviour
     public void OnTargetSmash(Target target)
     {
         Target.Type targetType = target.GetSpecification().m_type;
+        Debug.Log("OnTargetSmash: " + targetType.ToString());
         if (targetType == Target.Type.NormalEnemy)
         {
             m_player.IncreaseScore(target.GetSpecification().m_score);
@@ -75,7 +75,6 @@ public class GameMechanicExecutor : MonoBehaviour
         }
         else if (targetType == Target.Type.StrongEnemy)
         {
-            Debug.Log("StrongEnemy smashed");
         }
     }
 
