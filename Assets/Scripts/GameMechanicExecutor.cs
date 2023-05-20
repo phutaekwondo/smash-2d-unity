@@ -39,7 +39,7 @@ public class GameMechanicExecutor : MonoBehaviour
                 break;
         }
         target.SetHole(hole);
-        target.m_onTargetHitEvent += OnTargetHit;
+        target.m_onTargetSmashEvent += OnTargetSmash;
         m_remainTimeForNextTarget = m_waitTimeForNextSpawn;
         hole.SpawnTarget(target);
     }
@@ -60,17 +60,22 @@ public class GameMechanicExecutor : MonoBehaviour
         return m_spiritBar.GetCurrentSpirit() <= 0.0f;
     }
 
-    public void OnTargetHit(Target target)
+    public void OnTargetSmash(Target target)
     {
-        if (target.GetSpecification().m_type == Target.Type.NormalEnemy)
+        Target.Type targetType = target.GetSpecification().m_type;
+        if (targetType == Target.Type.NormalEnemy)
         {
             m_player.IncreaseScore(target.GetSpecification().m_score);
             m_spiritBar.IncreaseSpirit(target.GetSpecification().m_spiritAmount);
         }
-        else if (target.GetSpecification().m_type == Target.Type.Ally)
+        else if (targetType == Target.Type.Ally)
         {
             m_player.IncreaseScore(-target.GetSpecification().m_score);
             m_spiritBar.IncreaseSpirit(-target.GetSpecification().m_spiritAmount);
+        }
+        else if (targetType == Target.Type.StrongEnemy)
+        {
+            Debug.Log("StrongEnemy smashed");
         }
     }
 

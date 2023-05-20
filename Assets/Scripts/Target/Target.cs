@@ -17,7 +17,7 @@ public abstract class Target : MonoBehaviour
     protected int m_remainHitTimes = 1;
     protected float m_remainTime;
     protected Hole m_containedHole;
-    public event OnTargetHitHandler m_onTargetHitEvent;
+    public event OnTargetHitHandler m_onTargetSmashEvent;
 
     virtual public void InternalUpdate()
     {
@@ -64,7 +64,10 @@ public abstract class Target : MonoBehaviour
         if (m_remainHitTimes <= 0) return;
 
         m_remainHitTimes--;
-        m_onTargetHitEvent?.Invoke(this);
+        if (m_remainHitTimes <= 0)
+        {
+            m_onTargetSmashEvent?.Invoke(this);
+        }
     }
     public void SetHole(Hole hole)
     {
