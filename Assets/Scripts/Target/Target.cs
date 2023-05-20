@@ -8,6 +8,7 @@ public abstract class Target : MonoBehaviour
     public enum Type
     {
         NormalEnemy,
+        StrongEnemy,
         Ally,
     }
 
@@ -18,7 +19,7 @@ public abstract class Target : MonoBehaviour
     protected Hole m_containedHole;
     public event OnTargetHitHandler m_onTargetHitEvent;
 
-    public void InternalUpdate()
+    virtual public void InternalUpdate()
     {
         if (m_remainTime <= 0) return;
 

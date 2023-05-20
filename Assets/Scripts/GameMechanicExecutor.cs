@@ -22,6 +22,7 @@ public class GameMechanicExecutor : MonoBehaviour
 #nullable disable 
 
         Target.Type type = (Target.Type)UnityEngine.Random.Range(0, Enum.GetNames(typeof(Target.Type)).Length);
+        type = Target.Type.StrongEnemy;
         Target target = null;
         switch (type)
         {
@@ -30,6 +31,9 @@ public class GameMechanicExecutor : MonoBehaviour
                 break;
             case Target.Type.Ally:
                 target = m_targetFactory.GetAlly();
+                break;
+            case Target.Type.StrongEnemy:
+                target = m_targetFactory.GetStrongEnemy();
                 break;
             default:
                 break;
