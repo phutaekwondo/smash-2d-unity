@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
         //update score text
         m_currentScore = m_player.GetScore();
-        m_scoreText.text = "Score: " + m_player.GetScore().ToString();
+        m_scoreText.text = m_player.GetScore().ToString();
     }
 
     class GameStateBase 
