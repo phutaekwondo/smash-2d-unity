@@ -116,8 +116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_orderText: {fileID: 6643704322726852735}
-  m_readyToHitTextColor: {r: 0.75849056, g: 1, b: 0.8111497, a: 0}
-  m_notReadyToHitTextColor: {r: 0.6415094, g: 0.47287893, b: 0.25055176, a: 0}
+  m_readyToHitTextColor: {r: 0.90943396, g: 1, b: 0.9839793, a: 1}
+  m_notReadyToHitTextColor: {r: 1, g: 0.891306, b: 0.78679246, a: 0.5176471}
 --- !u!1 &6643704322726852729
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535

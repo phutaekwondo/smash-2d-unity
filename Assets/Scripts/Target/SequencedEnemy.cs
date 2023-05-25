@@ -47,8 +47,15 @@ public class SequencedEnemy : Enemy
 
     public void SetReadyToHit(bool isReadyToHit)
     {
-        if (m_isReadyToHit == isReadyToHit) return;
         m_isReadyToHit = isReadyToHit;
+        if (m_isReadyToHit)
+        {
+            m_orderText.color = m_readyToHitTextColor;
+        }
+        else
+        {
+            m_orderText.color = m_notReadyToHitTextColor;
+        }
     }
     public void SetIsLast(bool isLast)
     {
