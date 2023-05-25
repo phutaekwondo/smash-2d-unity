@@ -960,6 +960,7 @@ MonoBehaviour:
   m_normalEnemyPrefab: {fileID: 6393368786327265337, guid: 8b4a4799f925308488c5a2c8b15d61e5, type: 3}
   m_strongEnemyPrefab: {fileID: 2609465047585939788, guid: 8a75c3497ed5a5d42bbf42a27d2d60ac, type: 3}
   m_allyPrefab: {fileID: 1046036550528912185, guid: d19024526d7fd704eb778f538b41eabf, type: 3}
+  m_sequencedEnemyPrefab: {fileID: 1643697848627862848, guid: 382fd89d8e3a54d4c9759acde9c03264, type: 3}
   m_targetManager: {fileID: 1638388}
 --- !u!4 &570607919
 Transform:

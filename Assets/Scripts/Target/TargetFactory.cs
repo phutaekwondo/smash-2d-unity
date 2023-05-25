@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class TargetFactory : MonoBehaviour
@@ -5,10 +7,13 @@ public class TargetFactory : MonoBehaviour
     [SerializeField] private GameObject m_normalEnemyPrefab;
     [SerializeField] private GameObject m_strongEnemyPrefab;
     [SerializeField] private GameObject m_allyPrefab;
+    [SerializeField] private GameObject m_sequencedEnemyPrefab;
     [SerializeField] private TargetManager m_targetManager;
+
     public static TargetSpecification m_normalEnemySpecification { get; private set; }
     public static TargetSpecification m_allySpecification { get; private set; }
     public static TargetSpecification m_strongEnemySpecification { get; private set; }
+    public static TargetSpecification m_sequencedEnemySpecification { get; private set; }
 
     internal Ally GetAlly()
     {
@@ -18,6 +23,29 @@ public class TargetFactory : MonoBehaviour
     internal NormalEnemy GetNormalEnemy()
     {
         return SpawnTarget(m_normalEnemyPrefab).GetComponent<NormalEnemy>();
+    }
+
+    internal List<SequencedEnemy> GetSequencedEnemies(int sequenceLength)
+    {
+        List<SequencedEnemy> sequencedEnemies = new List<SequencedEnemy>();
+        for (int i = 0; i < sequenceLength; i++)
+        {
+            SequencedEnemy sequencedEnemy = SpawnTarget(m_sequencedEnemyPrefab).GetComponent<SequencedEnemy>();
+            sequencedEnemy.SetOrder(i+1);
+            sequencedEnemy.SetReadyToHit(false);
+            sequencedEnemies.Add(sequencedEnemy);
+        }
+        for (int i = 0; i < sequenceLength-1; i++)
+        {
+            sequencedEnemies[i].SetNextEnemy(sequencedEnemies[i + 1]);
+        }
+
+        // set first enemy
+        sequencedEnemies[0].SetReadyToHit(true);
+        // set last enemy
+        sequencedEnemies[sequencedEnemies.Count-1].SetIsLast(true);
+
+        return sequencedEnemies;
     }
 
     internal StrongEnemy GetStrongEnemy()
@@ -55,6 +83,13 @@ public class TargetFactory : MonoBehaviour
             GameConfig.Instance.m_strongEnemyScore,
             GameConfig.Instance.m_strongEnemyHoldOnTime,
             GameConfig.Instance.m_strongEnemySpiritAmount
+        );
+        m_sequencedEnemySpecification = new TargetSpecification(
+            Target.Type.SequencedEnemy,
+            GameConfig.Instance.m_sequencedEnemyDuration,
+            GameConfig.Instance.m_sequencedEnemyScore,
+            GameConfig.Instance.m_sequencedEnemyHoldOnTime,
+            GameConfig.Instance.m_sequencedEnemySpiritAmount
         );
     }
 }

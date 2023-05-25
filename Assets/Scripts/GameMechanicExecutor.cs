@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameMechanicExecutor : MonoBehaviour
@@ -13,34 +14,59 @@ public class GameMechanicExecutor : MonoBehaviour
 
     public void SpawnTarget()
     {
-#nullable enable
-        Hole? hole = m_holesManager.GetRandomEmptyHole();
-        if (hole == null)
-        {
-            return;
-        }
-#nullable disable 
+        // Target.Type type = (Target.Type)UnityEngine.Random.Range(0, Enum.GetNames(typeof(Target.Type)).Length);
+        Target.Type type = Target.Type.SequencedEnemy;
 
-        Target.Type type = (Target.Type)UnityEngine.Random.Range(0, Enum.GetNames(typeof(Target.Type)).Length);
-        Target target = null;
-        switch (type)
+        if (type != Target.Type.SequencedEnemy)
         {
-            case Target.Type.NormalEnemy:
-                target = m_targetFactory.GetNormalEnemy();
-                break;
-            case Target.Type.Ally:
-                target = m_targetFactory.GetAlly();
-                break;
-            case Target.Type.StrongEnemy:
-                target = m_targetFactory.GetStrongEnemy();
-                break;
-            default:
-                break;
+#nullable enable
+            Hole? hole = m_holesManager.GetRandomEmptyHole();
+            if (hole == null)
+            {
+                return;
+            }
+#nullable disable 
+            Target target = null;
+            switch (type)
+            {
+                case Target.Type.NormalEnemy:
+                    target = m_targetFactory.GetNormalEnemy();
+                    break;
+                case Target.Type.Ally:
+                    target = m_targetFactory.GetAlly();
+                    break;
+                case Target.Type.StrongEnemy:
+                    target = m_targetFactory.GetStrongEnemy();
+                    break;
+                default:
+                    break;
+            }
+            target.SetHole(hole);
+            target.m_onTargetSmashEvent += OnTargetSmash;
+            hole.SpawnTarget(target);
         }
-        target.SetHole(hole);
-        target.m_onTargetSmashEvent += OnTargetSmash;
-        m_remainTimeForNextTarget = m_waitTimeForNextSpawn;
-        hole.SpawnTarget(target);
+        else
+        {
+            int sequenceLength = GameConfig.Instance.m_sequencedEnemiesCount;
+            // check if enough empty holes 
+#nullable enable
+            List<Hole>? holes = m_holesManager.GetMultiEmptyHoles(sequenceLength);
+            if (holes == null)
+            {
+                Debug.Log("Not enough empty holes for sequenced enemies");
+                return;
+            }
+#nullable disable
+            // spawn sequenced enemies
+            List<SequencedEnemy> sequencedEnemies = m_targetFactory.GetSequencedEnemies(sequenceLength);
+
+            for (int i = 0; i < sequenceLength; i++)
+            {
+                sequencedEnemies[i].SetHole(holes[i]);
+                sequencedEnemies[i].m_onTargetSmashEvent += OnTargetSmash;
+                holes[i].SpawnTarget(sequencedEnemies[i]);
+            }
+        }
     }
 
     internal void UpdateInternal()
@@ -49,6 +75,7 @@ public class GameMechanicExecutor : MonoBehaviour
         if (m_remainTimeForNextTarget <= 0.0f)
         {
             SpawnTarget();
+            m_remainTimeForNextTarget = m_waitTimeForNextSpawn;
         }
 
         m_spiritBar.InternalUpdate();
@@ -73,6 +100,11 @@ public class GameMechanicExecutor : MonoBehaviour
             m_spiritBar.IncreaseSpirit(-target.GetSpecification().m_spiritAmount);
         }
         else if (targetType == Target.Type.StrongEnemy)
+        {
+            m_player.IncreaseScore(target.GetSpecification().m_score);
+            m_spiritBar.IncreaseSpirit(target.GetSpecification().m_spiritAmount);
+        }
+        else if (targetType == Target.Type.SequencedEnemy)
         {
             m_player.IncreaseScore(target.GetSpecification().m_score);
             m_spiritBar.IncreaseSpirit(target.GetSpecification().m_spiritAmount);

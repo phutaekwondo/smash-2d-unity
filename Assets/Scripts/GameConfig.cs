@@ -27,6 +27,12 @@ public class GameConfig : MonoBehaviour
     public int m_strongEnemyScore { get; private set; } = 10;
     public float m_strongEnemySpiritAmount { get; private set; } = 15f;
     public int m_strongEnemyDuration { get; private set; } = 3;
+    //SequencedEnemy (just for last member)
+    public int m_sequencedEnemiesCount { get; private set; } = 3;
+    public float m_sequencedEnemyHoldOnTime { get; private set; } = 2.0f;
+    public int m_sequencedEnemyScore { get; private set; } = 10;
+    public float m_sequencedEnemySpiritAmount { get; private set; } = 15f;
+    public int m_sequencedEnemyDuration { get; private set; } = 1;
 
     //====GAME MECHANIC====
     public float m_spiritDropSpeed { get; private set; } = 20f; //per second

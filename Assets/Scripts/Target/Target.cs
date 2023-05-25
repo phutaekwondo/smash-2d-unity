@@ -10,6 +10,7 @@ public abstract class Target : MonoBehaviour
         NormalEnemy,
         StrongEnemy,
         Ally,
+        SequencedEnemy,
     }
 
     protected TargetSpecification m_specification;
