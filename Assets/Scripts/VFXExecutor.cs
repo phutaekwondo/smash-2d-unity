@@ -12,7 +12,6 @@ public class VFXExecutor : MonoBehaviour
     private void Start() 
     {
         m_redWarningDefaultColor = m_redWarningImage.color;
-        m_redWarningDefaultAlpha = m_redWarningDefaultColor.a;
         m_redWarningImage.color = new Color(
             m_redWarningDefaultColor.r, 
             m_redWarningDefaultColor.g, 
