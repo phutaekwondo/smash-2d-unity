@@ -48,7 +48,6 @@ public class GameMechanicExecutor : MonoBehaviour
         else
         {
             int sequenceLength = GameConfig.Instance.m_sequencedEnemiesCount;
-            // check if enough empty holes 
 #nullable enable
             List<Hole>? holes = m_holesManager.GetMultiEmptyHoles(sequenceLength);
             if (holes == null)
@@ -56,7 +55,6 @@ public class GameMechanicExecutor : MonoBehaviour
                 return;
             }
 #nullable disable
-            // spawn sequenced enemies
             List<SequencedEnemy> sequencedEnemies = m_targetFactory.GetSequencedEnemies(sequenceLength);
 
             for (int i = 0; i < sequenceLength; i++)
