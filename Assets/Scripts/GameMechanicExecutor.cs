@@ -14,8 +14,8 @@ public class GameMechanicExecutor : MonoBehaviour
 
     public void SpawnTarget()
     {
-        // Target.Type type = (Target.Type)UnityEngine.Random.Range(0, Enum.GetNames(typeof(Target.Type)).Length);
-        Target.Type type = Target.Type.SequencedEnemy;
+        Target.Type type = (Target.Type)UnityEngine.Random.Range(0, Enum.GetNames(typeof(Target.Type)).Length);
+        // Target.Type type = Target.Type.SequencedEnemy;
 
         if (type != Target.Type.SequencedEnemy)
         {
@@ -53,7 +53,6 @@ public class GameMechanicExecutor : MonoBehaviour
             List<Hole>? holes = m_holesManager.GetMultiEmptyHoles(sequenceLength);
             if (holes == null)
             {
-                Debug.Log("Not enough empty holes for sequenced enemies");
                 return;
             }
 #nullable disable
