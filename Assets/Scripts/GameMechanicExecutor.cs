@@ -11,6 +11,7 @@ public class GameMechanicExecutor : MonoBehaviour
     [SerializeField] private HolesManager m_holesManager;
     [SerializeField] private Player m_player;
     [SerializeField] private SpiritBar m_spiritBar;
+    [SerializeField] private VFXExecutor m_vfxExecutor;
 
     public void SpawnTarget()
     {
@@ -95,6 +96,7 @@ public class GameMechanicExecutor : MonoBehaviour
         {
             m_player.IncreaseScore(-target.GetSpecification().m_score);
             m_spiritBar.IncreaseSpirit(-target.GetSpecification().m_spiritAmount);
+            m_vfxExecutor.PlayRedWarning();
         }
         else if (targetType == Target.Type.StrongEnemy)
         {
