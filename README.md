@@ -1,4 +1,4 @@
-![preview](https://raw.githubusercontent.com/phutaekwondo/smash-2d-unity/main/smash2d-very-first-demo.gif)
+![preview](https://raw.githubusercontent.com/phutaekwondo/smash-2d-unity/main/smash2d-31523.gif)
 
 # Requirements
 
