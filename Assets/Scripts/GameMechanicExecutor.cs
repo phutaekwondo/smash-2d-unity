@@ -11,7 +11,7 @@ public class GameMechanicExecutor : MonoBehaviour
     [SerializeField] private HolesManager m_holesManager;
     [SerializeField] private Player m_player;
     [SerializeField] private SpiritBar m_spiritBar;
-    [SerializeField] private VFXExecutor m_vfxExecutor;
+    private VFXExecutor m_vfxExecutor;
 
     public void SpawnTarget()
     {
@@ -113,6 +113,7 @@ public class GameMechanicExecutor : MonoBehaviour
     private void Start() 
     {
         m_waitTimeForNextSpawn = GameConfig.Instance.m_waitTimeForNextSpawn;
+        m_vfxExecutor = VFXExecutor.Instance;
     }
 
 }

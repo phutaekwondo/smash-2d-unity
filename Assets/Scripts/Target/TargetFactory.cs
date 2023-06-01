@@ -9,7 +9,6 @@ public class TargetFactory : MonoBehaviour
     [SerializeField] private GameObject m_allyPrefab;
     [SerializeField] private GameObject m_sequencedEnemyPrefab;
     [SerializeField] private TargetManager m_targetManager;
-    [SerializeField] private VFXExecutor m_vfxExecutor;
 
     public static TargetSpecification m_normalEnemySpecification { get; private set; }
     public static TargetSpecification m_allySpecification { get; private set; }
@@ -59,7 +58,6 @@ public class TargetFactory : MonoBehaviour
     {
         GameObject targetGameObject = Instantiate(prefab);
         Target target = targetGameObject.GetComponent<Target>();
-        target.m_onTargetHitEvent += m_vfxExecutor.HandleOnTargetHit;
         m_targetManager.AddTarget(target);
         return target;
     }

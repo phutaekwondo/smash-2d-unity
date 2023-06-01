@@ -70,14 +70,19 @@ public abstract class Target : MonoBehaviour
         m_remainHitTimes--;
     }
 
+    public void SetHole(Hole hole)
+    {
+        m_containedHole = hole;
+    }
+
     protected void OnSmash()
     {
         m_onTargetSmashEvent?.Invoke(this);
     }
 
-    public void SetHole(Hole hole)
+    private void Start() 
     {
-        m_containedHole = hole;
+        m_onTargetHitEvent += VFXExecutor.Instance.HandleOnTargetHit;
     }
 
     // PRIVATE METHODS

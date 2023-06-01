@@ -4,6 +4,11 @@ using System.Collections;
 
 public class VFXExecutor : MonoBehaviour
 {
+    public static VFXExecutor Instance { get; private set; }
+    private void Awake() {
+        Instance = this;
+    }
+
     [SerializeField] private Image m_redWarningImage;
     [SerializeField] private float m_redWarningDefaultAlpha;
 
