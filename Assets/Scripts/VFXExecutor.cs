@@ -38,18 +38,20 @@ public class VFXExecutor : MonoBehaviour
 
     public void PlayRedWarning()
     {
+        StopAllCoroutines();
         StartCoroutine(PlayRedWarningAnimation());
     }
 
     private IEnumerator PlayRedWarningAnimation()
     {
         float disappearTime = 0.5f;
-            m_redWarningImage.color = new Color(
+        m_redWarningImage.color = new Color(
                 m_redWarningDefaultColor.r, 
                 m_redWarningDefaultColor.g, 
                 m_redWarningDefaultColor.b, 
                 m_redWarningDefaultAlpha);
-        while (m_redWarningImage.color.a >= 0)
+
+        while (m_redWarningImage.color.a > 0)
         {
             float currentAlpha = m_redWarningImage.color.a;
             float newAlpha = currentAlpha - m_redWarningDefaultAlpha*(Time.deltaTime / disappearTime);
