@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9efd65347f618549ae5eed9271c3b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_hammerCursor: {fileID: 2800000, guid: d5edfb25e488c0c49865125bc875de3c, type: 3}
 --- !u!1 &97749480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1743,7 +1744,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 18.95
   m_fontSizeBase: 82.6
   m_fontWeight: 400
   m_enableAutoSizing: 1

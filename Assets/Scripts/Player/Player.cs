@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private Texture2D m_hammerCursor;
     private int m_score = 0;
     private const int MIN_SCORE = 0;
 
@@ -52,5 +53,6 @@ public class Player : MonoBehaviour
     private void Start() 
     {
         m_inputProvider = new InputKeyboardMouse();
+        Cursor.SetCursor(m_hammerCursor, new Vector2(m_hammerCursor.width/4, m_hammerCursor.height/2), CursorMode.Auto);
     }
 }
