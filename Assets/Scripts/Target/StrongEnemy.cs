@@ -24,6 +24,7 @@ public class StrongEnemy : Enemy
         base.OnHit();
         if (m_remainHitTimes == 0)
         {
+            OnSmash();
             this.DrawIn();
         }
     }

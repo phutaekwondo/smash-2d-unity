@@ -7,6 +7,8 @@ public class VFXExecutor : MonoBehaviour
     [SerializeField] private Image m_redWarningImage;
     [SerializeField] private float m_redWarningDefaultAlpha;
 
+    [SerializeField] private GameObject m_hitEffectPrefab;
+
     private Color m_redWarningDefaultColor;
 
     private void Start() 
@@ -17,6 +19,16 @@ public class VFXExecutor : MonoBehaviour
             m_redWarningDefaultColor.g, 
             m_redWarningDefaultColor.b, 
             0.0f); //make the red warning image transparent
+    }
+
+    public void HandleOnTargetHit(Target target)
+    {
+        PlayHitVFX(target.transform.position);
+    }
+
+    public void PlayHitVFX(Vector2 hitPosition)
+    {
+        GameObject hitEffect = Instantiate(m_hitEffectPrefab, hitPosition, Quaternion.identity);
     }
 
     public void PlayRedWarning()

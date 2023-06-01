@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Target
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -44,4 +45,7 @@ TagManager:
     locked: 0
   - name: hole1
     uniqueID: 2471776817
+    locked: 0
+  - name: vfx
+    uniqueID: 3348121679
     locked: 0

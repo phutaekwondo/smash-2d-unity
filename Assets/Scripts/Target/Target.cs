@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 public delegate void OnTargetSmashHandler(Target target);
+public delegate void OnTargetHitHanlder(Target target);
 
 public abstract class Target : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public abstract class Target : MonoBehaviour
     protected float m_remainTime;
     protected Hole m_containedHole;
     public event OnTargetSmashHandler m_onTargetSmashEvent;
+    public event OnTargetHitHanlder m_onTargetHitEvent;
 
     virtual public void InternalUpdate()
     {
@@ -63,13 +65,16 @@ public abstract class Target : MonoBehaviour
     virtual public void OnHit()
     {
         if (m_remainHitTimes <= 0) return;
+        m_onTargetHitEvent?.Invoke(this);
 
         m_remainHitTimes--;
-        if (m_remainHitTimes <= 0)
-        {
-            m_onTargetSmashEvent?.Invoke(this);
-        }
     }
+
+    protected void OnSmash()
+    {
+        m_onTargetSmashEvent?.Invoke(this);
+    }
+
     public void SetHole(Hole hole)
     {
         m_containedHole = hole;

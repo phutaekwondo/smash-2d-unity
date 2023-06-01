@@ -22,9 +22,11 @@ public class SequencedEnemy : Enemy
     {
         if (!m_isReadyToHit) return;
 
-        if (m_isLast) 
+        base.OnHit();
+
+        if (m_isLast && m_remainHitTimes == 0) 
         {
-            base.OnHit();
+            OnSmash();
         }
         else
         {

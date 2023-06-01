@@ -14,6 +14,7 @@ public class Ally : Target
         base.OnHit();
         if (m_remainHitTimes == 0)
         {
+            OnSmash();
             this.DrawIn();
         }
     }

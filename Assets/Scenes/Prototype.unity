@@ -557,6 +557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_redWarningImage: {fileID: 322131491}
   m_redWarningDefaultAlpha: 0.39215687
+  m_hitEffectPrefab: {fileID: 100004, guid: f95ff734540a0d749be6571b6cb5b37f, type: 3}
 --- !u!4 &308267362
 Transform:
   m_ObjectHideFlags: 0
@@ -1087,6 +1088,7 @@ MonoBehaviour:
   m_allyPrefab: {fileID: 1046036550528912185, guid: d19024526d7fd704eb778f538b41eabf, type: 3}
   m_sequencedEnemyPrefab: {fileID: 1643697848627862848, guid: 382fd89d8e3a54d4c9759acde9c03264, type: 3}
   m_targetManager: {fileID: 1638388}
+  m_vfxExecutor: {fileID: 308267361}
 --- !u!4 &570607919
 Transform:
   m_ObjectHideFlags: 0
