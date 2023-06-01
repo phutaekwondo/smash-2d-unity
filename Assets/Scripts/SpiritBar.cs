@@ -30,7 +30,6 @@ public class SpiritBar : MonoBehaviour
 
     public void InternalUpdate()
     {
-
         if (m_spirit > 0)
         {
             m_spirit -= m_spiritDropSpeed * Time.deltaTime;
