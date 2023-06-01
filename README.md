@@ -1,5 +1,9 @@
 ![preview](https://raw.githubusercontent.com/phutaekwondo/smash-2d-unity/main/smash2d-31523.gif)
 
+# Deployment
+
+https://macteo.itch.io/smash-the-capsule
+
 # Requirements
 
 - Unity Editor 2021.3.15f1
