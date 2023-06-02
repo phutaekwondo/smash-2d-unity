@@ -58,7 +58,10 @@ public class TargetFactory : MonoBehaviour
     {
         GameObject targetGameObject = Instantiate(prefab);
         Target target = targetGameObject.GetComponent<Target>();
-        m_targetManager.AddTarget(target);
+        if (m_targetManager != null)
+        {
+            m_targetManager.AddTarget(target);
+        }
         return target;
     }
     private void Start() 

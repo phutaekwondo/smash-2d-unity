@@ -89,7 +89,17 @@ public abstract class Target : MonoBehaviour
     private IEnumerator JumpOutAnimation()
     {
         float deep = 1.5f;
-        float ratioSpeed = GetSpecification().m_linearRatioSpeed;
+
+        //[temporary fix] check specification null to avoid bug in Tutorial scene
+        float ratioSpeed;
+        if (m_specification != null)
+        {
+            ratioSpeed = GetSpecification().m_linearRatioSpeed;
+        }
+        else
+        {
+            ratioSpeed = 3f;
+        }
 
         Vector3 endPosition = transform.position;
         Vector3 startPosition = endPosition - new Vector3(0.0f, deep);
@@ -111,7 +121,16 @@ public abstract class Target : MonoBehaviour
     private IEnumerator DrawInAnimation()
     {
         float deep = 1.5f;
-        float ratioSpeed = GetSpecification().m_linearRatioSpeed;
+        //[temporary fix] check specification null to avoid bug in Tutorial scene
+        float ratioSpeed;
+        if (m_specification != null)
+        {
+            ratioSpeed = GetSpecification().m_linearRatioSpeed;
+        }
+        else
+        {
+            ratioSpeed = 3f;
+        }
 
         Vector3 startPosition = transform.position;
         Vector3 endPosition = startPosition - new Vector3(0.0f, deep);

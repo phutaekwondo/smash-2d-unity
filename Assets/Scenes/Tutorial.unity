@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &95591579 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1140841568660747643, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
+  m_PrefabInstance: {fileID: 428390269}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 200392db5658e804f84cf1b1e5d7dbd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &428390269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -132,7 +143,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 392024989124636550, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_Name
-      value: Hole
+      value: NormalEnemyHole
       objectReference: {fileID: 0}
     - target: {fileID: 392024989124636552, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_RootOrder
@@ -366,6 +377,55 @@ PlayableDirector:
     value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
+--- !u!1 &1218011422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1218011424}
+  - component: {fileID: 1218011423}
+  m_Layer: 0
+  m_Name: TargetFactory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1218011423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218011422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f840509d8dd6f4896f93a490821672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_normalEnemyPrefab: {fileID: 6393368786327265337, guid: 8b4a4799f925308488c5a2c8b15d61e5, type: 3}
+  m_strongEnemyPrefab: {fileID: 2609465047585939788, guid: 8a75c3497ed5a5d42bbf42a27d2d60ac, type: 3}
+  m_allyPrefab: {fileID: 1046036550528912185, guid: d19024526d7fd704eb778f538b41eabf, type: 3}
+  m_sequencedEnemyPrefab: {fileID: 1643697848627862848, guid: 382fd89d8e3a54d4c9759acde9c03264, type: 3}
+  m_targetManager: {fileID: 0}
+--- !u!4 &1218011424
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218011422}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.18881464, y: 0.16246839, z: 0.03973891}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1630685590
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,6 +455,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c71b80c6c51648e4e97901b243243848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_targetFactory: {fileID: 1218011423}
+  m_normalEnemyHole: {fileID: 95591579}
 --- !u!4 &1630685592
 Transform:
   m_ObjectHideFlags: 0

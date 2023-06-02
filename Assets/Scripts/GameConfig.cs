@@ -8,6 +8,7 @@ public class GameConfig : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     //Configs 
