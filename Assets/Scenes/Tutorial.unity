@@ -280,6 +280,7 @@ MonoBehaviour:
     m_Signals:
     - {fileID: 11400000, guid: 99eeace96a3766a40b117e5692e38713, type: 2}
     - {fileID: 11400000, guid: 03f3951b6dcd73044a6fdeaa00b2ec3b, type: 2}
+    - {fileID: 11400000, guid: 219a7286d48844943bf4a777732341d1, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -301,6 +302,20 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: TutorialDirector, Assembly-CSharp
           m_MethodName: HitNormalEnemy
           m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 278423943}
+          m_TargetAssemblyTypeName: TutorialCursor, Assembly-CSharp
+          m_MethodName: SetPressing
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
