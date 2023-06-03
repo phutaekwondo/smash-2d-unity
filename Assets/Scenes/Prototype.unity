@@ -212,6 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_hammerCursor: {fileID: 2800000, guid: d5edfb25e488c0c49865125bc875de3c, type: 3}
+  m_hammerCursorPressed: {fileID: 2800000, guid: 82f2322bf37e06943ad78c4198995e8b, type: 3}
 --- !u!1 &97749480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,7 +1039,6 @@ MonoBehaviour:
   m_holesManager: {fileID: 1660629902}
   m_player: {fileID: 67285011}
   m_spiritBar: {fileID: 2106751808}
-  m_vfxExecutor: {fileID: 308267361}
 --- !u!4 &561289107
 Transform:
   m_ObjectHideFlags: 0
@@ -1088,7 +1088,6 @@ MonoBehaviour:
   m_allyPrefab: {fileID: 1046036550528912185, guid: d19024526d7fd704eb778f538b41eabf, type: 3}
   m_sequencedEnemyPrefab: {fileID: 1643697848627862848, guid: 382fd89d8e3a54d4c9759acde9c03264, type: 3}
   m_targetManager: {fileID: 1638388}
-  m_vfxExecutor: {fileID: 308267361}
 --- !u!4 &570607919
 Transform:
   m_ObjectHideFlags: 0
@@ -1746,7 +1745,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18.95
+  m_fontSize: 18
   m_fontSizeBase: 82.6
   m_fontWeight: 400
   m_enableAutoSizing: 1

@@ -12,4 +12,10 @@ public class InputKeyboardMouse : InputProvider
         }
         return null;
     }
+    public override bool IsPressing()
+    {
+        return Input.GetMouseButton(0) 
+            || Input.GetKey(m_firstKey) 
+            || Input.GetKey(m_secondKey);
+    }
 }

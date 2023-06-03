@@ -3,6 +3,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private Texture2D m_hammerCursor;
+    [SerializeField] private Texture2D m_hammerCursorPressed;
+    private Vector2 m_cursorHotspot;
     private int m_score = 0;
     private const int MIN_SCORE = 0;
 
@@ -15,6 +17,17 @@ public class Player : MonoBehaviour
         if (inputPosition.HasValue)
         {
             DetectHitObject(inputPosition.Value);
+        }
+
+        //set cursor based on input
+        bool IsPressing = m_inputProvider.IsPressing();
+        if (IsPressing)
+        {
+            Cursor.SetCursor(m_hammerCursorPressed, m_cursorHotspot, CursorMode.Auto);
+        }
+        else
+        {
+            Cursor.SetCursor(m_hammerCursor, m_cursorHotspot, CursorMode.Auto);
         }
     }
 
@@ -53,6 +66,7 @@ public class Player : MonoBehaviour
     private void Start() 
     {
         m_inputProvider = new InputKeyboardMouse();
-        Cursor.SetCursor(m_hammerCursor, new Vector2(m_hammerCursor.width/4, m_hammerCursor.height/2), CursorMode.Auto);
+        m_cursorHotspot = new Vector2(m_hammerCursor.width / 4, m_hammerCursor.height / 2);
+        Cursor.SetCursor(m_hammerCursor, m_cursorHotspot, CursorMode.Auto);
     }
 }

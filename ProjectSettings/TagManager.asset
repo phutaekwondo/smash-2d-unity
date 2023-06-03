@@ -49,3 +49,6 @@ TagManager:
   - name: vfx
     uniqueID: 3348121679
     locked: 0
+  - name: overlay
+    uniqueID: 2451184721
+    locked: 0
