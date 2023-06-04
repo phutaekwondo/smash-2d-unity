@@ -17,4 +17,9 @@ public class TutorialDirector : MonoBehaviour
         m_normalEnemyCursor.SetPressing(true);
         m_normalEnemy.OnHit();
     }
+
+    public void SpawnStrongEnemy()
+    {
+        Debug.Log("SpawnStrongEnemy");
+    }
 }
