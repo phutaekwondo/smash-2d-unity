@@ -14,8 +14,11 @@ public class SequencedEnemy : Enemy
     public SequencedEnemy(): base()
     {
         m_specification = TargetFactory.m_sequencedEnemySpecification;
-        m_remainHitTimes = m_specification.m_hitDuration; 
-        m_remainTime = m_specification.m_holdOnTime; 
+        if (m_specification != null)
+        {
+            m_remainHitTimes = m_specification.m_hitDuration; 
+            m_remainTime = m_specification.m_holdOnTime; 
+        }
     }
 
     public override void OnHit()

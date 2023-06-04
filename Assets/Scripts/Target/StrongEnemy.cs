@@ -8,8 +8,11 @@ public class StrongEnemy : Enemy
     public StrongEnemy(): base()
     {
         m_specification = TargetFactory.m_strongEnemySpecification;
-        m_remainHitTimes = m_specification.m_hitDuration; 
-        m_remainTime = m_specification.m_holdOnTime; 
+        if (m_specification != null)
+        {
+            m_remainHitTimes = m_specification.m_hitDuration; 
+            m_remainTime = m_specification.m_holdOnTime; 
+        }
     }
 
     public override void InternalUpdate()

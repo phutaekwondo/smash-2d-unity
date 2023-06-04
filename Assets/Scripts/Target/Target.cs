@@ -59,7 +59,10 @@ public abstract class Target : MonoBehaviour
     public void RemoveFromPlay() 
     {
         m_containedHole.SetEmpty(true);
-        TargetManager.Instance.RemoveTarget(this);
+        if (TargetManager.Instance != null)
+        {
+            TargetManager.Instance.RemoveTarget(this);
+        }
         Destroy(this.gameObject);
     }
     virtual public void OnHit()
