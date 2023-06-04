@@ -39,9 +39,8 @@ public class SequencedEnemy : Enemy
         this.DrawIn();
     }
 
-    public override void InternalUpdate()
+    private void Start() 
     {
-        base.InternalUpdate();
         m_orderText.text = m_order.ToString();
     }
 
