@@ -510,12 +510,72 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: d2d0390826d50a5418838c7ae599e4d9, type: 2}
+    - {fileID: 11400000, guid: b7e0d77db094e70479686a320c4030fa, type: 2}
+    - {fileID: 11400000, guid: 99eeace96a3766a40b117e5692e38713, type: 2}
+    - {fileID: 11400000, guid: 219a7286d48844943bf4a777732341d1, type: 2}
+    - {fileID: 11400000, guid: 03f3951b6dcd73044a6fdeaa00b2ec3b, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1630685591}
           m_TargetAssemblyTypeName: TutorialDirector, Assembly-CSharp
           m_MethodName: SpawnStrongEnemy
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1630685590}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1630685591}
+          m_TargetAssemblyTypeName: TutorialDirector, Assembly-CSharp
+          m_MethodName: SpawnStrongEnemy
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1440092874}
+          m_TargetAssemblyTypeName: TutorialCursor, Assembly-CSharp
+          m_MethodName: SetPressing
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1630685591}
+          m_TargetAssemblyTypeName: TutorialDirector, Assembly-CSharp
+          m_MethodName: HitStrongEnemy
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -536,7 +596,7 @@ PlayableDirector:
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 010a7ee2546581146a0f5d097ca47c90, type: 2}
   m_InitialState: 1
-  m_WrapMode: 2
+  m_WrapMode: 1
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings: []
@@ -551,7 +611,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 392024989124636550, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_Name
-      value: Hole
+      value: StrongEnemyHole
       objectReference: {fileID: 0}
     - target: {fileID: 392024989124636552, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
       propertyPath: m_RootOrder
@@ -604,6 +664,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 392024989124636552, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
   m_PrefabInstance: {fileID: 1164256194}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1164256196 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1140841568660747643, guid: e67953404a2298145ad7bf8b91f6d98c, type: 3}
+  m_PrefabInstance: {fileID: 1164256194}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 200392db5658e804f84cf1b1e5d7dbd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1218011422
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,7 +841,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 755514215744494563, guid: ce11f730d3ec4b443b2808727e9d1586, type: 3}
       propertyPath: m_Name
-      value: TutorialCursor
+      value: StrongEnemyTutorialCursor
       objectReference: {fileID: 0}
     - target: {fileID: 755514215744494573, guid: ce11f730d3ec4b443b2808727e9d1586, type: 3}
       propertyPath: m_RootOrder
@@ -823,6 +894,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 755514215744494573, guid: ce11f730d3ec4b443b2808727e9d1586, type: 3}
   m_PrefabInstance: {fileID: 1440092872}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1440092874 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 755514215744494562, guid: ce11f730d3ec4b443b2808727e9d1586, type: 3}
+  m_PrefabInstance: {fileID: 1440092872}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc7159e99eb3af4599ecd4407e1f984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1459270148
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,6 +971,8 @@ MonoBehaviour:
   m_targetFactory: {fileID: 1218011423}
   m_normalEnemyHole: {fileID: 95591579}
   m_normalEnemyCursor: {fileID: 278423943}
+  m_strongEnemyHole: {fileID: 1164256196}
+  m_strongEnemyCursor: {fileID: 1440092874}
 --- !u!4 &1630685592
 Transform:
   m_ObjectHideFlags: 0

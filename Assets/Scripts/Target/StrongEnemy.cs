@@ -13,6 +13,12 @@ public class StrongEnemy : Enemy
             m_remainHitTimes = m_specification.m_hitDuration; 
             m_remainTime = m_specification.m_holdOnTime; 
         }
+        else
+        {
+            //use magic number if cannot find specification
+            m_remainHitTimes = 3;
+            m_remainTime = 3;
+        }
     }
 
     private void Start() 
@@ -23,7 +29,6 @@ public class StrongEnemy : Enemy
     public override void OnHit()
     {
         if (m_remainHitTimes <= 0) return;
-        m_HitsRemainText.text = m_remainHitTimes.ToString();
 
         base.OnHit();
         if (m_remainHitTimes == 0)
@@ -31,5 +36,7 @@ public class StrongEnemy : Enemy
             OnSmash();
             this.DrawIn();
         }
+
+        m_HitsRemainText.text = m_remainHitTimes.ToString();
     }
 }
