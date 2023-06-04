@@ -22,6 +22,14 @@ public abstract class Target : MonoBehaviour
     public event OnTargetSmashHandler m_onTargetSmashEvent;
     public event OnTargetHitHanlder m_onTargetHitEvent;
 
+    public Target()
+    {
+        if (VFXExecutor.Instance != null)
+        {
+            m_onTargetHitEvent += VFXExecutor.Instance.HandleOnTargetHit;
+        }
+    }
+
     virtual public void InternalUpdate()
     {
         if (m_remainTime <= 0) return;
@@ -81,11 +89,6 @@ public abstract class Target : MonoBehaviour
     protected void OnSmash()
     {
         m_onTargetSmashEvent?.Invoke(this);
-    }
-
-    private void Start() 
-    {
-        m_onTargetHitEvent += VFXExecutor.Instance.HandleOnTargetHit;
     }
 
     // PRIVATE METHODS

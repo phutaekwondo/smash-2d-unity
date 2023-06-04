@@ -15,14 +15,15 @@ public class StrongEnemy : Enemy
         }
     }
 
-    public override void InternalUpdate()
+    private void Start() 
     {
-        base.InternalUpdate();
         m_HitsRemainText.text = m_remainHitTimes.ToString();
     }
+
     public override void OnHit()
     {
         if (m_remainHitTimes <= 0) return;
+        m_HitsRemainText.text = m_remainHitTimes.ToString();
 
         base.OnHit();
         if (m_remainHitTimes == 0)
