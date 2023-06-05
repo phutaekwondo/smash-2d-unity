@@ -23,11 +23,11 @@ public class Player : MonoBehaviour
         bool IsPressing = m_inputProvider.IsPressing();
         if (IsPressing)
         {
-            Cursor.SetCursor(m_hammerCursorPressed, m_cursorHotspot, CursorMode.Auto);
+            Cursor.SetCursor(m_hammerCursorPressed, m_cursorHotspot, CursorMode.ForceSoftware);
         }
         else
         {
-            Cursor.SetCursor(m_hammerCursor, m_cursorHotspot, CursorMode.Auto);
+            Cursor.SetCursor(m_hammerCursor, m_cursorHotspot, CursorMode.ForceSoftware);
         }
     }
 
@@ -66,7 +66,8 @@ public class Player : MonoBehaviour
     private void Start() 
     {
         m_inputProvider = new InputKeyboardMouse();
+
         m_cursorHotspot = new Vector2(m_hammerCursor.width / 4, m_hammerCursor.height / 2);
-        Cursor.SetCursor(m_hammerCursor, m_cursorHotspot, CursorMode.Auto);
+        Cursor.SetCursor(m_hammerCursor, m_cursorHotspot, CursorMode.ForceSoftware);
     }
 }

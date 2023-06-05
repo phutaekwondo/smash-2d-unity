@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: Macteo
   productName: smash-2d
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -44,8 +44,8 @@ PlayerSettings:
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 560
   defaultScreenHeight: 1000
-  defaultScreenWidthWeb: 490
-  defaultScreenHeightWeb: 800
+  defaultScreenWidthWeb: 500
+  defaultScreenHeightWeb: 550
   m_StereoRenderingPath: 0
   m_ActiveColorSpace: 0
   m_MTRendering: 1
