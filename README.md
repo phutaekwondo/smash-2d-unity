@@ -1,4 +1,4 @@
-![preview](https://raw.githubusercontent.com/phutaekwondo/smash-2d-unity/main/smash2d-31523.gif)
+![preview](https://raw.githubusercontent.com/phutaekwondo/smash-2d-unity/main/smash2d-6523.gif)
 
 # Deployment
 
